@@ -1,0 +1,15 @@
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\bin\Debug\ClassScheduler.exe
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\bin\Debug\ClassScheduler.pdb
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\ResolveAssemblyReference.cache
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\ClassScheduler.Form1.resources
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\ClassScheduler.Properties.Resources.resources
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\GenerateResource.read.1.tlog
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\GenerateResource.write.1.tlog
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\ClassScheduler.exe
+c:\users\grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\ClassScheduler.pdb
+C:\Users\Grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\ClassScheduler.ClassGroupBox.resources
+C:\Users\Grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\bin\Debug\Google.GData.Calendar.dll
+C:\Users\Grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\bin\Debug\Google.GData.Client.dll
+C:\Users\Grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\bin\Debug\Google.GData.Extensions.dll
+C:\Users\Grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\bin\Debug\Google.GData.AccessControl.dll
+C:\Users\Grant\documents\visual studio 2010\Projects\ClassScheduler\ClassScheduler\obj\x86\Debug\ClassScheduler.SettingsForm.resources
