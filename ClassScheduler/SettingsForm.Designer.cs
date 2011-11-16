@@ -42,7 +42,7 @@
 			this.cancelBtn = new System.Windows.Forms.Button();
 			this.groupBox3 = new System.Windows.Forms.GroupBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.calendarNameTxt = new System.Windows.Forms.TextBox();
+			this.calendarUrlTxt = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.groupBox3.SuspendLayout();
@@ -157,14 +157,15 @@
 			this.cancelBtn.TabIndex = 9;
 			this.cancelBtn.Text = "Cancel";
 			this.cancelBtn.UseVisualStyleBackColor = true;
+			this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
 			// 
 			// groupBox3
 			// 
 			this.groupBox3.Controls.Add(this.label5);
-			this.groupBox3.Controls.Add(this.calendarNameTxt);
+			this.groupBox3.Controls.Add(this.calendarUrlTxt);
 			this.groupBox3.Location = new System.Drawing.Point(13, 103);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Size = new System.Drawing.Size(220, 47);
+			this.groupBox3.Size = new System.Drawing.Size(316, 47);
 			this.groupBox3.TabIndex = 10;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Calendar Information";
@@ -174,16 +175,16 @@
 			this.label5.AutoSize = true;
 			this.label5.Location = new System.Drawing.Point(12, 22);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(83, 13);
+			this.label5.Size = new System.Drawing.Size(68, 13);
 			this.label5.TabIndex = 1;
-			this.label5.Text = "Calendar Name:";
+			this.label5.Text = "Calendar Url:";
 			// 
-			// calendarNameTxt
+			// calendarUrlTxt
 			// 
-			this.calendarNameTxt.Location = new System.Drawing.Point(99, 19);
-			this.calendarNameTxt.Name = "calendarNameTxt";
-			this.calendarNameTxt.Size = new System.Drawing.Size(100, 20);
-			this.calendarNameTxt.TabIndex = 0;
+			this.calendarUrlTxt.Location = new System.Drawing.Point(86, 19);
+			this.calendarUrlTxt.Name = "calendarUrlTxt";
+			this.calendarUrlTxt.Size = new System.Drawing.Size(224, 20);
+			this.calendarUrlTxt.TabIndex = 0;
 			// 
 			// SettingsForm
 			// 
@@ -228,6 +229,6 @@
 		private System.Windows.Forms.Button cancelBtn;
 		private System.Windows.Forms.GroupBox groupBox3;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.TextBox calendarNameTxt;
+		private System.Windows.Forms.TextBox calendarUrlTxt;
 	}
 }

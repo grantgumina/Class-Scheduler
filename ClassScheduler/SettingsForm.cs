@@ -26,8 +26,13 @@ namespace ClassScheduler
 			Form1.password = passTxt.Text;
 			Form1.startOfSemester = startSemesterPicker.Value;
 			Form1.endOfSemester = endSemesterPicker.Value;
-			Form1.calendarTitle = calendarNameTxt.Text;
+			Form1.calendarUrl = calendarUrlTxt.Text;
 
+			this.Close();
+		}
+
+		private void cancelBtn_Click(object sender, EventArgs e)
+		{
 			this.Close();
 		}
 	}

@@ -18,6 +18,7 @@ namespace ClassScheduler
 		public static String username = "";
 		public static String password = "";
 		public static String calendarTitle = "";
+		public static String calendarUrl = "";
 
 		public static DateTime startOfSemester;
 		public static DateTime endOfSemester;
@@ -54,123 +55,162 @@ namespace ClassScheduler
 		private int assignClassStartDay(String day)
 		{
 			int firstDay = 0;
-
-				if (day.Equals("Mo"))
+			if (day.Equals("Mo"))
+			{
+				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
 				{
-					Console.Write(startOfSemester.DayOfWeek);
-					if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-					{
-						firstDay = startOfSemester.Day;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-					{
-						firstDay = startOfSemester.Day + 6;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-					{
-						firstDay = startOfSemester.Day + 5;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-					{
-						firstDay = startOfSemester.Day + 4;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-					{
-						firstDay = startOfSemester.Day + 3;
-					}
-				} else if (day.Equals("Tu"))
-				{
-					if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-					{
-						firstDay = startOfSemester.Day  + 1;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-					{
-						firstDay = startOfSemester.Day;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-					{
-						firstDay = startOfSemester.Day + 6;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-					{
-						firstDay = startOfSemester.Day + 5;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-					{
-						firstDay = startOfSemester.Day + 4;
-					} 
+					firstDay = startOfSemester.Day;
 				}
-				else if (day.Equals("We"))
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
 				{
-					if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-					{
-						firstDay = startOfSemester.Day  + 2;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-					{
-						firstDay = startOfSemester.Day + 1;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-					{
-						firstDay = startOfSemester.Day;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-					{
-						firstDay = startOfSemester.Day + 5;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-					{
-						firstDay = startOfSemester.Day + 4;
-					}		
+					firstDay = startOfSemester.Day + 6;
 				}
-				else if (day.Equals("Th"))
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
 				{
-					if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-					{
-						firstDay = startOfSemester.Day  + 3;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-					{
-						firstDay = startOfSemester.Day + 2;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-					{
-						firstDay = startOfSemester.Day + 1;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-					{
-						firstDay = startOfSemester.Day;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-					{
-						firstDay = startOfSemester.Day + 6;
-					}		
+					firstDay = startOfSemester.Day + 5;
 				}
-				else if (day.Equals("Fri"))
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
 				{
-					if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-					{
-						firstDay = startOfSemester.Day + 4;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-					{
-						firstDay = startOfSemester.Day + 3;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-					{
-						firstDay = startOfSemester.Day + 2;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-					{
-						firstDay = startOfSemester.Day + 1;
-					}
-					else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-					{
-						firstDay = startOfSemester.Day;
-					}		
+					firstDay = startOfSemester.Day + 4;
 				}
-				Console.WriteLine("First Day: " + firstDay);
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
+				{
+					firstDay = startOfSemester.Day + 3;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
+				{
+					firstDay = startOfSemester.Day + 2;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
+				{
+					firstDay = startOfSemester.Day + 1;
+				}
+			} 
+			else if (day.Equals("Tu"))
+			{
+				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
+				{
+					firstDay = startOfSemester.Day  + 1;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
+				{
+					firstDay = startOfSemester.Day;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
+				{
+					firstDay = startOfSemester.Day + 6;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
+				{
+					firstDay = startOfSemester.Day + 5;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
+				{
+					firstDay = startOfSemester.Day + 4;
+				} 
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
+				{
+					firstDay = startOfSemester.Day + 3;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
+				{
+					firstDay = startOfSemester.Day + 2;
+				}
+			}
+			else if (day.Equals("We"))
+			{
+				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
+				{
+					firstDay = startOfSemester.Day  + 2;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
+				{
+					firstDay = startOfSemester.Day + 1;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
+				{
+					firstDay = startOfSemester.Day;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
+				{
+					firstDay = startOfSemester.Day + 5;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
+				{
+					firstDay = startOfSemester.Day + 4;
+				}		
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
+				{
+					firstDay = startOfSemester.Day + 4;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
+				{
+					firstDay = startOfSemester.Day + 3;
+				}
+			}
+			else if (day.Equals("Th"))
+			{
+				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
+				{
+					firstDay = startOfSemester.Day  + 3;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
+				{
+					firstDay = startOfSemester.Day + 2;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
+				{
+					firstDay = startOfSemester.Day + 1;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
+				{
+					firstDay = startOfSemester.Day;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
+				{
+					firstDay = startOfSemester.Day + 6;
+				}		
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
+				{
+					firstDay = startOfSemester.Day + 5;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
+				{
+					firstDay = startOfSemester.Day + 4;
+				}
+			}
+			else if (day.Equals("Fri"))
+			{
+				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
+				{
+					firstDay = startOfSemester.Day + 4;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
+				{
+					firstDay = startOfSemester.Day + 3;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
+				{
+					firstDay = startOfSemester.Day + 2;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
+				{
+					firstDay = startOfSemester.Day + 1;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
+				{
+					firstDay = startOfSemester.Day;
+				}		
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
+				{
+					firstDay = startOfSemester.Day + 6;
+				}
+				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
+				{
+					firstDay = startOfSemester.Day + 5;
+				}
+			}
+			Console.WriteLine("First Day: " + firstDay);
 			return firstDay;
 		}
 
@@ -180,69 +220,75 @@ namespace ClassScheduler
 			timeSlots.Clear();
 
 			String report = "";
-			foreach (ClassGroupBox g in groupBoxList)
+
+			if (username == "" || password == "")
 			{
-				firstDayOfClass = assignClassStartDay(g.getDays());
+				MessageBox.Show("Please add Google login and password information.");
+			} 
+			else {
+				foreach (ClassGroupBox g in groupBoxList)
+				{
+					Console.WriteLine(g.getDays());
+					firstDayOfClass = assignClassStartDay(g.getDays());
 
-				// TODO: calculate day(s) of week
-				// DTSTART and DTEND must be same day
-				String recursionString = "DTSTART;VALUE=DATE:" + startOfSemester.Year
-				    + startOfSemester.Month.ToString("00") + firstDayOfClass.ToString()
-					+ "T" + g.getStartHour() + g.getStartMin()
-					+ "00" + "\r\nDTEND;VALUE=DATE:" + startOfSemester.Year 
-				    + startOfSemester.Month.ToString("00") + startOfSemester.Day.ToString("00") 
-				    + "T" + g.getEndHour() + g.getEndMin() + "00" 
-				    + "\r\n" + "RRULE:FREQ=WEEKLY;BYDAY=" + g.getDays() + ";UNTIL=" 
-				    + endOfSemester.Year + endOfSemester.Month.ToString("00") 
-				    + endOfSemester.Day.ToString("00") + "\r\n";
+					// DTSTART and DTEND must be same day
+					String recursionString = "DTSTART;TZID=US-Eastern;VALUE=DATETIME:" + startOfSemester.Year
+						+ startOfSemester.Month.ToString("00") + firstDayOfClass.ToString()
+						+ "T" + g.getStartHour() + g.getStartMin()
+						+ "00" + "\r\nDTEND;TZID=US-Eastern;VALUE=DATETIME:" + startOfSemester.Year
+						+ startOfSemester.Month.ToString("00") + startOfSemester.Day.ToString("00")
+						+ "T" + g.getEndHour() + g.getEndMin() + "00"
+						+ "\r\n" + "RRULE:FREQ=WEEKLY;BYDAY=" + g.getDays() + ";UNTIL="
+						+ endOfSemester.Year + endOfSemester.Month.ToString("00")
+						+ endOfSemester.Day.ToString("00") + "\r\n";
 
-				Recurrence recurrence = new Recurrence();
-				recurrence.Value = recursionString;
+					Recurrence recurrence = new Recurrence();
+					recurrence.Value = recursionString;
 
-				CalendarService service = new CalendarService("ggco-purdueScheduler-0.01");
-				Uri postUri = new Uri("https://www.google.com/calendar/feeds/s1nnpqt9ido2trquh6itlftvas%40group.calendar.google.com/private/full");
-				service.setUserCredentials("EMAIL", "PASSWORD");
-	
-				EventEntry calendarEntry = new EventEntry();
-				calendarEntry.Recurrence = recurrence;
+					CalendarService service = new CalendarService("ggco-purdueScheduler-0.01");
+					Uri postUri = new Uri("https://www.google.com/calendar/feeds/s1nnpqt9ido2trquh6itlftvas%40group.calendar.google.com/private/full");
 
-				report += buildDayReport(g);
+					service.setUserCredentials(username, password);
+					EventEntry calendarEntry = new EventEntry();
+					calendarEntry.Recurrence = recurrence;
 
-				Console.Out.WriteLine(calendarEntry.Recurrence.Value);
-				AtomEntry insertedEntry = service.Insert(postUri, calendarEntry);
+					report += buildDayReport(g);
 
-				//// BASELINE - used to ensure no overlap in a given day
-				//DateTime start = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 
-				//    DateTime.Now.Day, int.Parse(g.getStartHour()), int.Parse(g.getStartMin()), 0);
-				//DateTime end = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 
-				//    DateTime.Now.Day, int.Parse(g.getEndHour()), int.Parse(g.getEndMin()), 0);
+					Console.Out.WriteLine(calendarEntry.Recurrence.Value);
+					AtomEntry insertedEntry = service.Insert(postUri, calendarEntry);
 
-				//if (groupBoxList.Count == 0)
-				//{
-				//    timeSlots.Add(new TimeSlot(start, end));
-				//}
-				//else
-				//{
-				//    foreach (TimeSlot t in timeSlots)
-				//    {
-				//        if (start <= t.getStartTime() && end > t.getStartTime())
-				//        {
-				//            MessageBox.Show("Classes overlap - one ends after another starts.");
-				//        }
-				//        else if (start >= t.getStartTime() && start < t.getEndTime())
-				//        {
-				//            MessageBox.Show("Classes overlap - one starts before another ends.");
-				//        }
-				//        else
-				//        {
-				//            MessageBox.Show("No errors");
-				//        }
-				//    }
-				//    timeSlots.Add(new TimeSlot(start, end));
-				//}
+					//// BASELINE - used to ensure no overlap in a given day
+					//DateTime start = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 
+					//    DateTime.Now.Day, int.Parse(g.getStartHour()), int.Parse(g.getStartMin()), 0);
+					//DateTime end = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 
+					//    DateTime.Now.Day, int.Parse(g.getEndHour()), int.Parse(g.getEndMin()), 0);
+
+					//if (groupBoxList.Count == 0)
+					//{
+					//    timeSlots.Add(new TimeSlot(start, end));
+					//}
+					//else
+					//{
+					//    foreach (TimeSlot t in timeSlots)
+					//    {
+					//        if (start <= t.getStartTime() && end > t.getStartTime())
+					//        {
+					//            MessageBox.Show("Classes overlap - one ends after another starts.");
+					//        }
+					//        else if (start >= t.getStartTime() && start < t.getEndTime())
+					//        {
+					//            MessageBox.Show("Classes overlap - one starts before another ends.");
+					//        }
+					//        else
+					//        {
+					//            MessageBox.Show("No errors");
+					//        }
+					//    }
+					//    timeSlots.Add(new TimeSlot(start, end));
+					//}
+				}
 			}
 			reportRichTxt.Text = report;
-
 		}
 
 		private void redrawBtn_Click(object sender, EventArgs e)
