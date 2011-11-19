@@ -17,7 +17,6 @@ namespace ClassScheduler
 	{
 		public static String username = "";
 		public static String password = "";
-		public static String calendarTitle = "";
 		public static String calendarUrl = "";
 
 		public static DateTime startOfSemester;
@@ -179,7 +178,7 @@ namespace ClassScheduler
 					firstDay = startOfSemester.Day + 4;
 				}
 			}
-			else if (day.Equals("Fri"))
+			else if (day.Equals("Fr"))
 			{
 				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
 				{
@@ -241,6 +240,7 @@ namespace ClassScheduler
 
 					Recurrence recurrence = new Recurrence();
 					recurrence.Value = recursionString;
+					Console.Out.WriteLine(recursionString);
 
 					CalendarService service = new CalendarService("ggco-purdueScheduler-0.01");
 					Uri postUri = new Uri("https://www.google.com/calendar/feeds/" + calendarUrl + "/private/full");
@@ -252,7 +252,19 @@ namespace ClassScheduler
 
 					report += buildDayReport(g);
 
-					AtomEntry insertedEntry = service.Insert(postUri, calendarEntry);
+					try
+					{
+						AtomEntry insertedEntry = service.Insert(postUri, calendarEntry);
+						resultLbl.Text = "SUCCESS";
+						resultLbl.ForeColor = Color.White;
+						resultLbl.BackColor = Color.Green;
+					}
+					catch
+					{
+						resultLbl.Text = "FAILURE";
+						resultLbl.ForeColor = Color.White;
+						resultLbl.BackColor = Color.Red;
+					}
 
 					//// BASELINE - used to ensure no overlap in a given day
 					//DateTime start = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 
@@ -363,9 +375,10 @@ namespace ClassScheduler
 
 		private String buildDayReport(ClassGroupBox classGroupBox)
 		{
-			String report = classGroupBox.getCourseName() + " " + classGroupBox.getCreditHours() + " \n" 
-				+ classGroupBox.getStartHour() + ":"  + classGroupBox.getStartMin() + " - " + classGroupBox.getEndHour() 
-				+ ":" + classGroupBox.getEndMin() + "\n\n";
+			String report = classGroupBox.getCourseName() + " \n" 
+				+ classGroupBox.getStartHour() + ":"  + classGroupBox.getStartMin() + " - " + classGroupBox.getEndHour()
+				+ ":" + classGroupBox.getEndMin() + "\n" + buildDayString(classGroupBox.getDays()) 
+				+ "\n-----------------------\n\n";
 			return report;
 		}
 

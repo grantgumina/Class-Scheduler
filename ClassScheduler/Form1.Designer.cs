@@ -38,7 +38,8 @@
 			this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.uploadBtn = new System.Windows.Forms.Button();
+			this.label1 = new System.Windows.Forms.Label();
+			this.resultLbl = new System.Windows.Forms.Label();
 			this.menuStrip1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -46,9 +47,9 @@
 			// 
 			this.generateBtn.Location = new System.Drawing.Point(12, 566);
 			this.generateBtn.Name = "generateBtn";
-			this.generateBtn.Size = new System.Drawing.Size(116, 29);
+			this.generateBtn.Size = new System.Drawing.Size(260, 29);
 			this.generateBtn.TabIndex = 3;
-			this.generateBtn.Text = "Generate";
+			this.generateBtn.Text = "Generate and Upload";
 			this.generateBtn.UseVisualStyleBackColor = true;
 			this.generateBtn.Click += new System.EventHandler(this.generateBtn_Click);
 			// 
@@ -56,7 +57,8 @@
 			// 
 			this.reportRichTxt.Location = new System.Drawing.Point(278, 55);
 			this.reportRichTxt.Name = "reportRichTxt";
-			this.reportRichTxt.Size = new System.Drawing.Size(267, 505);
+			this.reportRichTxt.ReadOnly = true;
+			this.reportRichTxt.Size = new System.Drawing.Size(267, 470);
 			this.reportRichTxt.TabIndex = 4;
 			this.reportRichTxt.Text = "";
 			// 
@@ -127,22 +129,34 @@
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
-			// uploadBtn
+			// label1
 			// 
-			this.uploadBtn.Location = new System.Drawing.Point(430, 566);
-			this.uploadBtn.Name = "uploadBtn";
-			this.uploadBtn.Size = new System.Drawing.Size(116, 29);
-			this.uploadBtn.TabIndex = 13;
-			this.uploadBtn.Text = "Upload";
-			this.uploadBtn.UseVisualStyleBackColor = true;
-			this.uploadBtn.Click += new System.EventHandler(this.uploadBtn_Click);
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(275, 31);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(66, 13);
+			this.label1.TabIndex = 14;
+			this.label1.Text = "Text Output:";
+			// 
+			// resultLbl
+			// 
+			this.resultLbl.AutoSize = true;
+			this.resultLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.resultLbl.Font = new System.Drawing.Font("Consolas", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.resultLbl.Location = new System.Drawing.Point(314, 551);
+			this.resultLbl.Name = "resultLbl";
+			this.resultLbl.Size = new System.Drawing.Size(227, 34);
+			this.resultLbl.TabIndex = 15;
+			this.resultLbl.Text = "--------------";
+			this.resultLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(558, 607);
-			this.Controls.Add(this.uploadBtn);
+			this.Controls.Add(this.resultLbl);
+			this.Controls.Add(this.label1);
 			this.Controls.Add(this.myClassPanel);
 			this.Controls.Add(this.redrawBtn);
 			this.Controls.Add(this.label5);
@@ -151,6 +165,9 @@
 			this.Controls.Add(this.generateBtn);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
+			this.MaximizeBox = false;
+			this.MaximumSize = new System.Drawing.Size(574, 645);
+			this.MinimumSize = new System.Drawing.Size(574, 645);
 			this.Name = "Form1";
 			this.Text = "Google Calendar Class Syncer";
 			this.Load += new System.EventHandler(this.Form1_Load);
@@ -173,7 +190,8 @@
 		private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
-		private System.Windows.Forms.Button uploadBtn;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label resultLbl;
     }
 }
 

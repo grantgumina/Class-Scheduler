@@ -18,6 +18,9 @@ namespace ClassScheduler
 
 		private void SettingsForm_Load(object sender, EventArgs e)
 		{
+			userTxt.Text = Form1.username;
+			passTxt.Text = Form1.password;
+			calendarUrlTxt.Text = Form1.calendarUrl;
 		}
 
 		private void applyBtn_Click(object sender, EventArgs e)

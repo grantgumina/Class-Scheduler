@@ -103,7 +103,7 @@
 			this.groupBox2.Location = new System.Drawing.Point(230, 16);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(261, 80);
-			this.groupBox2.TabIndex = 7;
+			this.groupBox2.TabIndex = 8;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Semester Range";
 			// 
@@ -144,7 +144,7 @@
 			this.applyBtn.Location = new System.Drawing.Point(335, 127);
 			this.applyBtn.Name = "applyBtn";
 			this.applyBtn.Size = new System.Drawing.Size(75, 23);
-			this.applyBtn.TabIndex = 8;
+			this.applyBtn.TabIndex = 9;
 			this.applyBtn.Text = "Apply";
 			this.applyBtn.UseVisualStyleBackColor = true;
 			this.applyBtn.Click += new System.EventHandler(this.applyBtn_Click);
@@ -154,7 +154,7 @@
 			this.cancelBtn.Location = new System.Drawing.Point(416, 127);
 			this.cancelBtn.Name = "cancelBtn";
 			this.cancelBtn.Size = new System.Drawing.Size(75, 23);
-			this.cancelBtn.TabIndex = 9;
+			this.cancelBtn.TabIndex = 10;
 			this.cancelBtn.Text = "Cancel";
 			this.cancelBtn.UseVisualStyleBackColor = true;
 			this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
@@ -166,7 +166,7 @@
 			this.groupBox3.Location = new System.Drawing.Point(13, 103);
 			this.groupBox3.Name = "groupBox3";
 			this.groupBox3.Size = new System.Drawing.Size(316, 47);
-			this.groupBox3.TabIndex = 10;
+			this.groupBox3.TabIndex = 7;
 			this.groupBox3.TabStop = false;
 			this.groupBox3.Text = "Calendar Information";
 			// 

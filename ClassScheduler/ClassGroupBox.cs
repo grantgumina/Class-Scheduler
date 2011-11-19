@@ -24,7 +24,6 @@ namespace ClassScheduler
 
 		private String courseName;
 		private String recursionString;
-		private double creditHours;
 
 		private CheckBox[] boxes;
 
@@ -72,17 +71,11 @@ namespace ClassScheduler
 			return courseName;
 		}
 
-		public double getCreditHours() 
-		{
-			return creditHours;
-		}
-
 		// events
-        private void startHrCmb_SelectedValueChanged(object sender, EventArgs e)
-        {
-            startHour = startHrCmb.Text;
-        }
-
+		private void startHrCmb_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			startHour = startHrCmb.Text;
+		}
         private void startMinCmb_SelectedIndexChanged(object sender, EventArgs e)
         {
             startMin = startMinCmb.Text;
@@ -121,7 +114,7 @@ namespace ClassScheduler
 
 		private void friCkBx_CheckedChanged(object sender, EventArgs e)
 		{
-			recursionString = "Fri";
+			recursionString = "Fr";
 		}
 
 		// textboxes
@@ -129,5 +122,6 @@ namespace ClassScheduler
 		{
 			courseName = courseNameTxt.Text;
 		}
+
     }
 }

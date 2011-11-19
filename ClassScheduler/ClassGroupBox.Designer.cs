@@ -40,6 +40,8 @@
 			this.friCkBx = new System.Windows.Forms.CheckBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.courseNameTxt = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// endHrCmb
@@ -98,7 +100,7 @@
             "22",
             "23",
             "24"});
-			this.endHrCmb.Location = new System.Drawing.Point(129, 31);
+			this.endHrCmb.Location = new System.Drawing.Point(129, 52);
 			this.endHrCmb.Name = "endHrCmb";
 			this.endHrCmb.Size = new System.Drawing.Size(40, 21);
 			this.endHrCmb.TabIndex = 3;
@@ -134,10 +136,11 @@
             "22",
             "23",
             "24"});
-			this.startHrCmb.Location = new System.Drawing.Point(12, 31);
+			this.startHrCmb.Location = new System.Drawing.Point(12, 52);
 			this.startHrCmb.Name = "startHrCmb";
 			this.startHrCmb.Size = new System.Drawing.Size(40, 21);
 			this.startHrCmb.TabIndex = 0;
+			this.startHrCmb.SelectedIndexChanged += new System.EventHandler(this.startHrCmb_SelectedIndexChanged);
 			// 
 			// startMinCmb
 			// 
@@ -150,7 +153,7 @@
             "30",
             "40",
             "50"});
-			this.startMinCmb.Location = new System.Drawing.Point(58, 31);
+			this.startMinCmb.Location = new System.Drawing.Point(58, 52);
 			this.startMinCmb.Name = "startMinCmb";
 			this.startMinCmb.Size = new System.Drawing.Size(40, 21);
 			this.startMinCmb.TabIndex = 1;
@@ -159,7 +162,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(107, 36);
+			this.label1.Location = new System.Drawing.Point(107, 57);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(16, 13);
 			this.label1.TabIndex = 2;
@@ -183,7 +186,7 @@
             "30",
             "40",
             "50"});
-			this.endMinCmb.Location = new System.Drawing.Point(175, 31);
+			this.endMinCmb.Location = new System.Drawing.Point(175, 52);
 			this.endMinCmb.Name = "endMinCmb";
 			this.endMinCmb.Size = new System.Drawing.Size(40, 21);
 			this.endMinCmb.TabIndex = 4;
@@ -192,7 +195,7 @@
 			// moCkBx
 			// 
 			this.moCkBx.AutoSize = true;
-			this.moCkBx.Location = new System.Drawing.Point(5, 68);
+			this.moCkBx.Location = new System.Drawing.Point(5, 103);
 			this.moCkBx.Name = "moCkBx";
 			this.moCkBx.Size = new System.Drawing.Size(41, 17);
 			this.moCkBx.TabIndex = 7;
@@ -203,7 +206,7 @@
 			// tuCkBx
 			// 
 			this.tuCkBx.AutoSize = true;
-			this.tuCkBx.Location = new System.Drawing.Point(49, 68);
+			this.tuCkBx.Location = new System.Drawing.Point(49, 103);
 			this.tuCkBx.Name = "tuCkBx";
 			this.tuCkBx.Size = new System.Drawing.Size(39, 17);
 			this.tuCkBx.TabIndex = 8;
@@ -214,7 +217,7 @@
 			// weCkBx
 			// 
 			this.weCkBx.AutoSize = true;
-			this.weCkBx.Location = new System.Drawing.Point(96, 68);
+			this.weCkBx.Location = new System.Drawing.Point(96, 103);
 			this.weCkBx.Name = "weCkBx";
 			this.weCkBx.Size = new System.Drawing.Size(43, 17);
 			this.weCkBx.TabIndex = 9;
@@ -225,7 +228,7 @@
 			// thCkBx
 			// 
 			this.thCkBx.AutoSize = true;
-			this.thCkBx.Location = new System.Drawing.Point(141, 68);
+			this.thCkBx.Location = new System.Drawing.Point(141, 103);
 			this.thCkBx.Name = "thCkBx";
 			this.thCkBx.Size = new System.Drawing.Size(39, 17);
 			this.thCkBx.TabIndex = 10;
@@ -236,11 +239,11 @@
 			// friCkBx
 			// 
 			this.friCkBx.AutoSize = true;
-			this.friCkBx.Location = new System.Drawing.Point(182, 68);
+			this.friCkBx.Location = new System.Drawing.Point(182, 103);
 			this.friCkBx.Name = "friCkBx";
-			this.friCkBx.Size = new System.Drawing.Size(37, 17);
+			this.friCkBx.Size = new System.Drawing.Size(35, 17);
 			this.friCkBx.TabIndex = 11;
-			this.friCkBx.Text = "Fri";
+			this.friCkBx.Text = "Fr";
 			this.friCkBx.UseVisualStyleBackColor = true;
 			this.friCkBx.CheckedChanged += new System.EventHandler(this.friCkBx_CheckedChanged);
 			// 
@@ -261,11 +264,31 @@
 			this.courseNameTxt.TabIndex = 13;
 			this.courseNameTxt.TextChanged += new System.EventHandler(this.courseNameTxt_TextChanged);
 			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(9, 32);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(33, 13);
+			this.label2.TabIndex = 14;
+			this.label2.Text = "Time:";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(9, 84);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(34, 13);
+			this.label4.TabIndex = 15;
+			this.label4.Text = "Days:";
+			// 
 			// ClassGroupBox
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.Controls.Add(this.label4);
+			this.Controls.Add(this.label2);
 			this.Controls.Add(this.courseNameTxt);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.friCkBx);
@@ -279,7 +302,7 @@
 			this.Controls.Add(this.moCkBx);
 			this.Controls.Add(this.endMinCmb);
 			this.Name = "ClassGroupBox";
-			this.Size = new System.Drawing.Size(223, 93);
+			this.Size = new System.Drawing.Size(223, 128);
 			this.Load += new System.EventHandler(this.ClassGroupBox_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -300,5 +323,7 @@
         private System.Windows.Forms.CheckBox friCkBx;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox courseNameTxt;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.Label label4;
     }
 }
