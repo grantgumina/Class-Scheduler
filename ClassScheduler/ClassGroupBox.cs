@@ -129,10 +129,5 @@ namespace ClassScheduler
 		{
 			courseName = courseNameTxt.Text;
 		}
-
-		private void creditHrsTxt_TextChanged(object sender, EventArgs e)
-		{
-			creditHours = double.Parse(creditHrsTxt.Text);
-		}
     }
 }

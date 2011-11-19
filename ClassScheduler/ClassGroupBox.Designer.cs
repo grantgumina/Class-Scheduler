@@ -33,8 +33,6 @@
 			this.startMinCmb = new System.Windows.Forms.ComboBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.endMinCmb = new System.Windows.Forms.ComboBox();
-			this.label2 = new System.Windows.Forms.Label();
-			this.creditHrsTxt = new System.Windows.Forms.TextBox();
 			this.moCkBx = new System.Windows.Forms.CheckBox();
 			this.tuCkBx = new System.Windows.Forms.CheckBox();
 			this.weCkBx = new System.Windows.Forms.CheckBox();
@@ -140,7 +138,6 @@
 			this.startHrCmb.Name = "startHrCmb";
 			this.startHrCmb.Size = new System.Drawing.Size(40, 21);
 			this.startHrCmb.TabIndex = 0;
-			this.startHrCmb.SelectedValueChanged += new System.EventHandler(this.startHrCmb_SelectedValueChanged);
 			// 
 			// startMinCmb
 			// 
@@ -191,23 +188,6 @@
 			this.endMinCmb.Size = new System.Drawing.Size(40, 21);
 			this.endMinCmb.TabIndex = 4;
 			this.endMinCmb.SelectedIndexChanged += new System.EventHandler(this.endMinCmb_SelectedIndexChanged);
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(118, 8);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(68, 13);
-			this.label2.TabIndex = 5;
-			this.label2.Text = "Credit Hours:";
-			// 
-			// creditHrsTxt
-			// 
-			this.creditHrsTxt.Location = new System.Drawing.Point(186, 5);
-			this.creditHrsTxt.Name = "creditHrsTxt";
-			this.creditHrsTxt.Size = new System.Drawing.Size(29, 20);
-			this.creditHrsTxt.TabIndex = 6;
-			this.creditHrsTxt.TextChanged += new System.EventHandler(this.creditHrsTxt_TextChanged);
 			// 
 			// moCkBx
 			// 
@@ -269,15 +249,15 @@
 			this.label3.AutoSize = true;
 			this.label3.Location = new System.Drawing.Point(9, 8);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(38, 13);
+			this.label3.Size = new System.Drawing.Size(74, 13);
 			this.label3.TabIndex = 12;
-			this.label3.Text = "Name:";
+			this.label3.Text = "Course Name:";
 			// 
 			// courseNameTxt
 			// 
-			this.courseNameTxt.Location = new System.Drawing.Point(53, 5);
+			this.courseNameTxt.Location = new System.Drawing.Point(89, 5);
 			this.courseNameTxt.Name = "courseNameTxt";
-			this.courseNameTxt.Size = new System.Drawing.Size(59, 20);
+			this.courseNameTxt.Size = new System.Drawing.Size(126, 20);
 			this.courseNameTxt.TabIndex = 13;
 			this.courseNameTxt.TextChanged += new System.EventHandler(this.courseNameTxt_TextChanged);
 			// 
@@ -298,8 +278,6 @@
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.moCkBx);
 			this.Controls.Add(this.endMinCmb);
-			this.Controls.Add(this.creditHrsTxt);
-			this.Controls.Add(this.label2);
 			this.Name = "ClassGroupBox";
 			this.Size = new System.Drawing.Size(223, 93);
 			this.Load += new System.EventHandler(this.ClassGroupBox_Load);
@@ -314,9 +292,7 @@
         private System.Windows.Forms.ComboBox startHrCmb;
         private System.Windows.Forms.ComboBox startMinCmb;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox endMinCmb;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox creditHrsTxt;
+		private System.Windows.Forms.ComboBox endMinCmb;
         private System.Windows.Forms.CheckBox moCkBx;
         private System.Windows.Forms.CheckBox tuCkBx;
         private System.Windows.Forms.CheckBox weCkBx;

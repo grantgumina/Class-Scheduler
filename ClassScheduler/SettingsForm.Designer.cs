@@ -175,9 +175,9 @@
 			this.label5.AutoSize = true;
 			this.label5.Location = new System.Drawing.Point(12, 22);
 			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(68, 13);
+			this.label5.Size = new System.Drawing.Size(66, 13);
 			this.label5.TabIndex = 1;
-			this.label5.Text = "Calendar Url:";
+			this.label5.Text = "Calendar ID:";
 			// 
 			// calendarUrlTxt
 			// 
