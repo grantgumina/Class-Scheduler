@@ -241,7 +241,6 @@ namespace ClassScheduler
 
 					Recurrence recurrence = new Recurrence();
 					recurrence.Value = recursionString;
-					MessageBox.Show(recursionString);
 
 					CalendarService service = new CalendarService("ggco-purdueScheduler-0.01");
 					Uri postUri = new Uri("https://www.google.com/calendar/feeds/" + calendarUrl + "/private/full");
