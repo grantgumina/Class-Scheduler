@@ -210,7 +210,6 @@ namespace ClassScheduler
 					firstDay = startOfSemester.Day + 5;
 				}
 			}
-			Console.WriteLine("First Day: " + firstDay);
 			return firstDay;
 		}
 
@@ -221,40 +220,39 @@ namespace ClassScheduler
 
 			String report = "";
 
-			if (username == "" || password == "")
+			if (username == "" || password == "" || calendarUrl == "")
 			{
 				MessageBox.Show("Please add Google login and password information.");
 			} 
 			else {
 				foreach (ClassGroupBox g in groupBoxList)
 				{
-					Console.WriteLine(g.getDays());
-					firstDayOfClass = assignClassStartDay(g.getDays());
+					firstDayOfClass = assignClassStartDay(g.getDays()[0]);
 
-					// DTSTART and DTEND must be same day
-					String recursionString = "DTSTART;TZID=US-Eastern;VALUE=DATETIME:" + startOfSemester.Year
+					String recursionString = "DTSTART;TZID=US/Eastern:" + startOfSemester.Year
 						+ startOfSemester.Month.ToString("00") + firstDayOfClass.ToString()
 						+ "T" + g.getStartHour() + g.getStartMin()
-						+ "00" + "\r\nDTEND;TZID=US-Eastern;VALUE=DATETIME:" + startOfSemester.Year
+						+ "00" + "\r\nDTEND;TZID=US/Eastern:" + startOfSemester.Year
 						+ startOfSemester.Month.ToString("00") + startOfSemester.Day.ToString("00")
 						+ "T" + g.getEndHour() + g.getEndMin() + "00"
-						+ "\r\n" + "RRULE:FREQ=WEEKLY;BYDAY=" + g.getDays() + ";UNTIL="
+						+ "\r\n" + "RRULE:FREQ=WEEKLY;BYDAY=" + buildDayString(g.getDays()) + ";UNTIL="
 						+ endOfSemester.Year + endOfSemester.Month.ToString("00")
 						+ endOfSemester.Day.ToString("00") + "\r\n";
 
 					Recurrence recurrence = new Recurrence();
 					recurrence.Value = recursionString;
+					MessageBox.Show(recursionString);
 
 					CalendarService service = new CalendarService("ggco-purdueScheduler-0.01");
-					Uri postUri = new Uri("https://www.google.com/calendar/feeds/s1nnpqt9ido2trquh6itlftvas%40group.calendar.google.com/private/full");
+					Uri postUri = new Uri("https://www.google.com/calendar/feeds/" + calendarUrl + "/private/full");
 
 					service.setUserCredentials(username, password);
 					EventEntry calendarEntry = new EventEntry();
+					calendarEntry.Title.Text = g.getCourseName();
 					calendarEntry.Recurrence = recurrence;
 
 					report += buildDayReport(g);
 
-					Console.Out.WriteLine(calendarEntry.Recurrence.Value);
 					AtomEntry insertedEntry = service.Insert(postUri, calendarEntry);
 
 					//// BASELINE - used to ensure no overlap in a given day
@@ -344,8 +342,24 @@ namespace ClassScheduler
 					days[i] = "Friday";
 				}
 			}
-
 			return days;
+		}
+
+		private String buildDayString(List<String> days)
+		{
+			String dayString = "";
+			foreach (String d in days)
+			{
+				if (days.Last() == d)
+				{
+					dayString += d;
+				}
+				else
+				{
+					dayString += d + ",";
+				}
+			}
+			return dayString;
 		}
 
 		private String buildDayReport(ClassGroupBox classGroupBox)

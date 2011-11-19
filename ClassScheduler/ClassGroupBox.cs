@@ -26,9 +26,11 @@ namespace ClassScheduler
 		private String recursionString;
 		private double creditHours;
 
+		private CheckBox[] boxes;
 
         private void ClassGroupBox_Load(object sender, EventArgs e)
         {
+			boxes = new CheckBox[]{ moCkBx, tuCkBx, weCkBx, thCkBx, friCkBx };
         }
 
         // getters
@@ -52,9 +54,17 @@ namespace ClassScheduler
             return endMin;
         }
 
-		public String getDays()
+		public List<String> getDays()
 		{
-			return recursionString;
+			List<String> selectedDays = new List<String>();
+			foreach (CheckBox b in boxes)
+			{
+				if (b.Checked)
+				{
+					selectedDays.Add(b.Text);
+				}
+			}
+			return selectedDays;
 		}
 
 		public String getCourseName()
