@@ -84,7 +84,7 @@
 			this.redrawBtn.Name = "redrawBtn";
 			this.redrawBtn.Size = new System.Drawing.Size(57, 23);
 			this.redrawBtn.TabIndex = 10;
-			this.redrawBtn.Text = "Redraw";
+			this.redrawBtn.Text = "Refresh";
 			this.redrawBtn.UseVisualStyleBackColor = true;
 			this.redrawBtn.Click += new System.EventHandler(this.redrawBtn_Click);
 			// 
@@ -169,7 +169,7 @@
 			this.MaximumSize = new System.Drawing.Size(574, 645);
 			this.MinimumSize = new System.Drawing.Size(574, 645);
 			this.Name = "Form1";
-			this.Text = "Google Calendar Class Syncer";
+			this.Text = "Class Schedule GCal Uploader";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
