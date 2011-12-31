@@ -51,165 +51,35 @@ namespace ClassScheduler
 		}
 
 		// worst code I've ever written in my life is below. Too tired to write creative algorithm....
-		private int assignClassStartDay(String day)
+		private int assignClassStartDay(String day, DateTime semesterStart)
 		{
-			int firstDay = 0;
+			DateTime d = new DateTime();
 			if (day.Equals("Mo"))
 			{
-				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-				{
-					firstDay = startOfSemester.Day;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-				{
-					firstDay = startOfSemester.Day + 6;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-				{
-					firstDay = startOfSemester.Day + 5;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-				{
-					firstDay = startOfSemester.Day + 4;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-				{
-					firstDay = startOfSemester.Day + 3;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
-				{
-					firstDay = startOfSemester.Day + 2;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
-				{
-					firstDay = startOfSemester.Day + 1;
-				}
-			} 
+				d = new DateTime(2011, 11, 7, 00, 00, 00, 00);
+			}
 			else if (day.Equals("Tu"))
 			{
-				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-				{
-					firstDay = startOfSemester.Day  + 1;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-				{
-					firstDay = startOfSemester.Day;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-				{
-					firstDay = startOfSemester.Day + 6;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-				{
-					firstDay = startOfSemester.Day + 5;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-				{
-					firstDay = startOfSemester.Day + 4;
-				} 
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
-				{
-					firstDay = startOfSemester.Day + 3;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
-				{
-					firstDay = startOfSemester.Day + 2;
-				}
+				d = new DateTime(2011, 11, 8, 00, 00, 00, 00);
 			}
 			else if (day.Equals("We"))
 			{
-				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-				{
-					firstDay = startOfSemester.Day  + 2;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-				{
-					firstDay = startOfSemester.Day + 1;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-				{
-					firstDay = startOfSemester.Day;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-				{
-					firstDay = startOfSemester.Day + 5;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-				{
-					firstDay = startOfSemester.Day + 4;
-				}		
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
-				{
-					firstDay = startOfSemester.Day + 4;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
-				{
-					firstDay = startOfSemester.Day + 3;
-				}
+				d = new DateTime(2011, 11, 9, 00, 00, 00, 00);
 			}
 			else if (day.Equals("Th"))
 			{
-				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-				{
-					firstDay = startOfSemester.Day  + 3;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-				{
-					firstDay = startOfSemester.Day + 2;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-				{
-					firstDay = startOfSemester.Day + 1;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-				{
-					firstDay = startOfSemester.Day;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-				{
-					firstDay = startOfSemester.Day + 6;
-				}		
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
-				{
-					firstDay = startOfSemester.Day + 5;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
-				{
-					firstDay = startOfSemester.Day + 4;
-				}
+				d = new DateTime(2011, 11, 10, 00, 00, 00, 00);
 			}
 			else if (day.Equals("Fr"))
 			{
-				if (startOfSemester.DayOfWeek == DayOfWeek.Monday)
-				{
-					firstDay = startOfSemester.Day + 4;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Tuesday)
-				{
-					firstDay = startOfSemester.Day + 3;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Wednesday)
-				{
-					firstDay = startOfSemester.Day + 2;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Thursday)
-				{
-					firstDay = startOfSemester.Day + 1;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Friday)
-				{
-					firstDay = startOfSemester.Day;
-				}		
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Saturday)
-				{
-					firstDay = startOfSemester.Day + 6;
-				}
-				else if (startOfSemester.DayOfWeek == DayOfWeek.Sunday)
-				{
-					firstDay = startOfSemester.Day + 5;
-				}
+				d = new DateTime(2011, 11, 11, 00, 00, 00, 00);
 			}
-			return firstDay;
+
+			TimeSpan t = semesterStart - d;
+			double diff = Math.Floor(t.TotalDays) % 7;
+			int daysUntil = Convert.ToInt32(7 - diff); // days from start of semester that first class occurs
+
+			return semesterStart.Day + daysUntil;
 		}
 
 		// TODO: dynamically generate study time based on credit hours of each class
@@ -223,10 +93,11 @@ namespace ClassScheduler
 			{
 				MessageBox.Show("Please add Google login and password information.");
 			} 
-			else {
+			else 
+			{
 				foreach (ClassGroupBox g in groupBoxList)
 				{
-					firstDayOfClass = assignClassStartDay(g.getDays()[0]);
+					firstDayOfClass = assignClassStartDay(g.getDays()[0], startOfSemester);
 
 					String recursionString = "DTSTART;TZID=US/Eastern:" + startOfSemester.Year
 						+ startOfSemester.Month.ToString("00") + firstDayOfClass.ToString()
